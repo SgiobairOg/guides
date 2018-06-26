@@ -32,7 +32,8 @@
     "redux-actions": "^2.2.1",
     "redux-create-types": "0.0.1",
     "redux-epic": "^0.3.0",
-    "rx": "^4.1.0"
+    "rx": "^4.1.0",
+    "snyk": "^1.85.0"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -53,11 +54,14 @@
     "lint": "eslint --ext .js,.jsx --ignore-path .gitignore .",
     "pre-commit-message": "echo \"Running pre-commit script. This can take a while.\"",
     "normalise": "node _normaliseArticles.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "pre-commit": [
     "pre-commit-message",
     "lint",
     "normalise"
-  ]
+  ],
+  "snyk": true
 }
