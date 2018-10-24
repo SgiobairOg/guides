@@ -17,7 +17,7 @@
     "gatsby-link": "^1.6.5",
     "gatsby-plugin-google-analytics": "^1.0.7",
     "gatsby-plugin-react-helmet": "^1.0.1",
-    "gatsby-plugin-sharp": "^1.6.0",
+    "gatsby-plugin-sharp": "^2.0.5",
     "gatsby-plugin-sitemap": "^1.2.0",
     "gatsby-remark-prismjs": "^1.2.0",
     "gatsby-remark-smartypants": "^1.4.1",
@@ -32,7 +32,8 @@
     "redux-actions": "^2.2.1",
     "redux-create-types": "0.0.1",
     "redux-epic": "^0.3.0",
-    "rx": "^4.1.0"
+    "rx": "^4.1.0",
+    "snyk": "^1.104.2"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
@@ -53,11 +54,14 @@
     "lint": "eslint --ext .js,.jsx --ignore-path .gitignore .",
     "pre-commit-message": "echo \"Running pre-commit script. This can take a while.\"",
     "normalise": "node _normaliseArticles.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "pre-commit": [
     "pre-commit-message",
     "lint",
     "normalise"
-  ]
+  ],
+  "snyk": true
 }
